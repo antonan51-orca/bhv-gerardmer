@@ -844,7 +844,7 @@
 
   function setLang(lang) {
     document.documentElement.lang = lang;
-    i18nNodes.forEach(el => {
+    document.querySelectorAll('[data-en]').forEach(el => {
       el.innerHTML = (lang === 'en') ? el.dataset.en : el.dataset.fr;
     });
     document.querySelectorAll('.lang button').forEach(b => {
